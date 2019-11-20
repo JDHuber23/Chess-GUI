@@ -13,7 +13,8 @@ objects and displays them as clickable green circles where they would move the
 piece(s) or red circles if they are attacking. 
 
 The GUI handles nearly all the rules of Chess, including en-passant, 
-castling, check, check-mate, queening.
+castling, check, check-mate, stale-mate, pawns initial 2 moves, pawns 
+queening, capturing... etc.
 
 Rules that were left out on purpose for simplicity:
   1. Pawns can also become rooks, knights, or bishops when they reach the 
