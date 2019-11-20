@@ -72,11 +72,21 @@ an engine so I could have someone to play against because everyone I know
 hates chess and/or hates losing to me at chess because somehow they are worse
 than I am at it.
 
-  Unfortunately I've run into huge design flaws implementing the initial idea
-I had for computing the best logical moves given a board position. I initially
-created a tree of nodes that contained a copy of a board given a set of moves,
-the move that got to this position in the tree, the score of that position,
-and whose turn it is to move.
+My initial plan was to take a board position and create a node. Then create child
+nodes representing each possible move from the position. For each of the child nodes,
+create child nodes based on the opponent's possible moves. Then evaluate the board
+by assuming the opponent would play the move that would give themselves the best possible
+score, and alternating which score was logically the best depending on which player's
+move it was, moving up the tree until we find the best possible move assuming the
+opponent plays ideally. (Recalculating after each move)
+
+Then I added an improvement to the algorithm called alpha-beta pruning,
+which logically deduces branches of moves that don't need to be checked for
+the min or max value.
+
+Unfortunately I've run into huge design flaws. I initially created a tree of nodes 
+that contained a copy of a board given a set of moves, the move that got to this 
+position in the tree, the score of that position, and whose turn it is to move.
 
 Here are the reasons that doesn't work:
   1. Too much data is stored and the tree will never see enough moves out to be good
@@ -93,7 +103,7 @@ It was at this point I decided to see how other people have approached this prob
 
 I turned to https://www.chessprogramming.org/ 
 
-  The REAL solution is for the engine to represent the board better, using bitboards.
+ The REAL solution is for the engine to represent the board better, using bitboards.
 Bitboards can use sets of 64 bits to represent different parts of the board using
 much less memory. The hard part is figuring out how to set up the bitboards to get
 each possible move and to translate from bitboard to something that my GUI can understand.
