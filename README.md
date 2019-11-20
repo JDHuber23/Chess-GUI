@@ -3,15 +3,17 @@ Made with Java and JavaFX
 
 # *Chess GUI*
 
-  I made this Chess GUI in JavaFX for my final project in my Java II class.
+ I made this Chess GUI in JavaFX for my final project in my Java II class.
 I got the images from Wikipedia and made the sounds using audacity and my
 knuckle hitting the back of my phone.
 
-  The GUI lays out individual piece objects on a gridpane, that when clicked
+ The GUI lays out individual piece objects on a gridpane, that when clicked
 calculates its own legal moves based on the position of all of the other
 objects and displays them as clickable green circles where they would move the 
-piece(s) or red circles if they are attacking. The GUI handles nearly all the 
-rules of Chess, including en-passant, castling, check, check-mate, queening.
+piece(s) or red circles if they are attacking. 
+
+The GUI handles nearly all the rules of Chess, including en-passant, 
+castling, check, check-mate, queening.
 
 Rules that were left out on purpose for simplicity:
   1. Pawns can also become rooks, knights, or bishops when they reach the 
