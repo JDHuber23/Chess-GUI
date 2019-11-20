@@ -68,7 +68,7 @@ a move is clicked, the game sends a new input.
 It's not an AI, I called the file an AI when I made it. It's not an AI lol.
 
   After learning about data structures, I decided to take a whack at creating
-a engine so I could have someone to play against because everyone I know
+an engine so I could have someone to play against because everyone I know
 hates chess and/or hates losing to me at chess because somehow they are worse
 than I am at it.
 
