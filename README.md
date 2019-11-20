@@ -45,7 +45,7 @@ To solve this I:
     the King as a reference and I wouldn't have to copy the check code a bunch of 
     times, BUT if I ever asked a piece for it's legal moves for any other reason
     (*cough* chess engine *cough*) then the piece would return illegal moves.
-  3. Fixed 1. and 2., no more problem.
+  3. Fixed 1 and 2, no more problem.
   4. Simply check if the King is in check and/or if the size of the list of 
   total legal moves for a player equals 0
     If both are true, checkmate! 
@@ -78,9 +78,10 @@ and whose turn it is to move.
 Here are the reasons that doesn't work:
   1. Too much data is stored and the tree will never see enough moves out to be good
   2. The "board" is a 2-dimensional array of references to pieces that do not agree
-  with where this copy says they should be on the board.
+  with where the copy of the board says they should be on the board.
   3. Since the pieces don't think they are where the copy of the board says they are,
   the next set of moves that is acquired to create the next branch creates impossible
+  positions
   4. The solution to this problem is to create copies of each piece that correctly 
   exhibits the behavior and data you'd expect at a given node, but this amplifies
   problem 1. enormously.
