@@ -27,7 +27,7 @@ Some of the parts I struggled with were:
   the King.
   2. Checking if a move is legal before allowing it as an option,
   because a move is illegal if it puts the king in check.
-  3. 1. and 2. broke the game because it created an infinite loop of
+  3. 1 and 2 combined broke the game because it created an infinite loop of
   getting the opposing side's moves to check if a move put the King in check
   4. Checking if a player had won or stalemated
   
