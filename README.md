@@ -65,12 +65,8 @@ would calculate what piece it is and what valid moves should be shown and when
 a move is clicked, the game sends a new input.
 
 # *WIP Chess ENGINE*
-It's not an AI, I called the file an AI when I made it. It's not an AI lol.
-
   After learning about data structures, I decided to take a whack at creating
-an engine so I could have someone to play against because everyone I know
-hates chess and/or hates losing to me at chess because somehow they are worse
-than I am at it.
+an engine so I could have someone to play against.
 
 My initial plan was to take a board position and create a node. Then create child
 nodes representing each possible move from the position. For each of the child nodes,
@@ -103,7 +99,7 @@ It was at this point I decided to see how other people have approached this prob
 
 I turned to https://www.chessprogramming.org/ 
 
- The REAL solution is for the engine to represent the board better, using bitboards.
+ The real solution is for the engine to represent the board better, using bitboards.
 Bitboards can use sets of 64 bits to represent different parts of the board using
 much less memory. The hard part is figuring out how to set up the bitboards to get
 each possible move and to translate from bitboard to something that my GUI can understand.
