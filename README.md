@@ -47,7 +47,7 @@ To solve this I:
     they had been returned to the chess game caller, as I wouldn't need to store
     the King as a reference and I wouldn't have to copy the check code a bunch of 
     times, BUT if I ever asked a piece for it's legal moves for any other reason
-    (*cough* chess engine *cough*) then the piece would return illegal moves.
+    the piece would return illegal moves.
   3. Fixed 1 and 2, no more problem.
   4. Simply check if the King is in check and/or if the size of the list of 
   total legal moves for a player equals 0
