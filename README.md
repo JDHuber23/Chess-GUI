@@ -19,7 +19,7 @@ queening, capturing... etc.
 Rules that were left out on purpose for simplicity:
   1. Pawns can also become rooks, knights, or bishops when they reach the 
   other side of the board
-    It's ALMOST always best to become a queen anyways
+    It's usually best to become a queen
   2. 3 move repetition draw
   3. 50 moves without a pawn move or a capture draw
   4. Move timer
@@ -30,16 +30,16 @@ Some of the parts I struggled with were:
   the King.
   2. Checking if a move is legal before allowing it as an option,
   because a move is illegal if it puts the king in check.
-  3. 1 and 2 combined broke the game because it created an infinite loop of
-  getting the opposing side's moves to check if a move put the King in check
+  3. 1 and 2 combined resulted in a stack overflow exception because it created 
+  an infinite loop of getting the opposing side's moves to check if a move 
+  put the King in check
   4. Checking if a player had won or stalemated
   
-To solve this I:
-  1. Inverted the problem. Instead of checking if other pieces could move
-  towards the King, check every possible position a King could be attacked
+To solve the above issues I:
+  1. Instead of checking if other pieces could move towards the King, 
+  check every possible position a King could be attacked
   from. 
-    This solution took hundreds of more lines of codes, but was way faster
-    and actually worked.
+    This solution took hundreds of more lines of codes, but was much faster.
   2. After the check system was reworked, I stored a reference to the ally
   King for every piece, and then had the King verify if a move put it in check
   before returning the list of moves for that piece.
@@ -49,7 +49,7 @@ To solve this I:
     times, BUT if I ever asked a piece for it's legal moves for any other reason
     the piece would return illegal moves.
   3. Fixed 1 and 2, no more problem.
-  4. Simply check if the King is in check and/or if the size of the list of 
+  4. Check if the King is in check and/or if the size of the list of 
   total legal moves for a player equals 0
     If both are true, checkmate! 
     If just check, then check
@@ -66,7 +66,7 @@ a move is clicked, the game sends a new input.
 
 # *WIP Chess ENGINE*
   After learning about data structures, I decided to take a whack at creating
-an engine so I could have someone to play against.
+an engine.
 
 My initial plan was to take a board position and create a node. Then create child
 nodes representing each possible move from the position. For each of the child nodes,
@@ -106,5 +106,5 @@ each possible move and to translate from bitboard to something that my GUI can u
 
 This is where the project has stalled after I ripped out hours of broken code and
 commented out good code that had to be reimplemented. I'm considering investigating
-creating an actual AI instead. I might learn a lot more about newer technology.
+creating an actual AI instead.
 
